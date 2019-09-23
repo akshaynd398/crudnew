@@ -23,33 +23,24 @@ export class EmployeeComponent implements OnInit {
   }
 
 //to add new employee
-createAndUpdate(currentEmployee: Employee ,isFromEdit){
+// createAndUpdate(currentEmployee: Employee ,isFromEdit){
 
-  if(isFromEdit==true)
-  {
+  // if(isFromEdit==true)
+  // {
 
-     this.save="update";
-  }
-  //  element.textContent = "update";
-  //  element.disabled = true;
-
-
-
-  // createAndUpdate(currentEmployee: Employee){
-     
-  //   if("editUser"){
-  //     //Keep the value as ADD
-  //     this.value = 'Add';
-  // } else {
-  //     //Change the value to Save
-  //     this.value = 'Save';
+  //    this.save="update";
   // }
+  // //  element.textContent = "update";
+  // //  element.disabled = true;
 
 
 
 
 
-   
+  
+  createAndUpdate(currentEmployee: Employee){
+     
+ 
     console.log(currentEmployee);
 
     
