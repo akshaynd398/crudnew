@@ -4,14 +4,13 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 import { ToastrService } from 'ngx-toastr';
 import { HttpClient,HttpHeaders } from '@angular/common/http';
-//import {REACTIVE_FORM_DIRECTIVES} from '@angular/forms';
 
 import { AlertService, UserService } from '../_services';
 
 @Component({templateUrl: 'register.component.html',
 styleUrls: ['register.component.css']})
 export class RegisterComponent implements OnInit {
-    registerForm: FormGroup;    
+    registerForm: FormGroup;
     loading = false;
     submitted = false;
     selecetdFile : File;

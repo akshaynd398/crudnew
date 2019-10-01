@@ -7,4 +7,6 @@ export class Employee
     contact:number;
     address:string ; 
     emailaddress : string;
+    latitude : string;
+    longitude : string;
 }

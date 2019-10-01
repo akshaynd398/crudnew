@@ -1,34 +1,15 @@
 
-
-<form [formGroup]="employeeform"  (ngSubmit)="Save()">
-
-<h3 style="color: salmon">Enter Details Here...</h3>
+<h3 style="color: salmon">Enter Details Here... yes details..</h3>
 <div class="row">
    
-
-   <!-- //first name  -->
   <div class="col-md-6 form-group">
-    <input placeholder="First Name"  formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
-    <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
-        <div *ngIf="f.firstName.errors.required">First Name is required</div>
-    </div>
-  
+    <input placeholder="First Name"  class="form-control" [(ngModel)]="employeeService.currentEmployee.firstname" required>
   </div>
-
-
-
-<!-- //last name  -->
   <div class="col-md-6 form-group">
-      <input placeholder="Last Name" formControlName="lastName"  class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }"/> 
-      <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
-          <div *ngIf="f.lastName.errors.required">Last Name is required</div>
-      </div>
-    
+      <input placeholder="Last Name"  class="form-control"[(ngModel)]="employeeService.currentEmployee.lastname"  > 
     </div>
 </div>
 
-
-<!-- designation  -->
 <div class="row">
     <div class="col-md-6 form-group">
       <input placeholder="Designation"  class="form-control"[(ngModel)]="employeeService.currentEmployee.designation"  >
@@ -36,83 +17,39 @@
    
   </div>
 
-
-  <!-- contact -->
   <div class="row">
       <div class="col-md-6 form-group">
         <input placeholder="Contact" type="number" required="contact" class="form-control"[(ngModel)]="employeeService.currentEmployee.contact">
       </div>
-
-
-      <!-- address  -->
       <div class="col-md-6 form-group">
           <input placeholder="Address"  class="form-control"[(ngModel)]="employeeService.currentEmployee.address">
         </div>
     </div>
 
- <!--  email address   -->
+ <!-- this is for email address field ..  -->
     <div class="row">
       <div class="col-md-6 form-group">
-        <input placeholder="Email Address" type="email"  class="form-control"[(ngModel)]="employeeService.currentEmployee.emailaddress">
+        <input placeholder="Email Address" type="email"  class="form-control"[(ngModel)]="employeeService.currentEmployee.emailaddress" required pattern="[^ @]*@[^ @]*">
       </div>
      
     </div>
 
 
 
-
-      <!-- // this is all about Reactive form -- so we must do the Reactive form validation on respective fields .  --> 
-
+     <!-- this is for lattitude and longitude ..  -->
+    
+     <div class="row">
+      <div class="col-md-6 form-group">
+        <input placeholder="latitude" type="latitude"  class="form-control"[(ngModel)]="employeeService.currentEmployee.latitude">
+      </div>
      
-      <!-- <h2>Enter Details Here...</h2>
+
+      <div class="col-md-6 form-group">
+        <input placeholder="longitude" type="longitude"  class="form-control"[(ngModel)]="employeeService.currentEmployee.longitude">
+      </div>
 
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-6">
-
-<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-    <div class="form-group">
-        <label for="firstName">First Name:</label>
-        <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
-        <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
-            <div *ngIf="f.firstName.errors.required">First Name is required</div>
-        </div>
     </div>
-    <div class="form-group">
-        <label for="lastName">Last Name:</label>
-        <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
-        <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
-            <div *ngIf="f.lastName.errors.required">Last Name is required</div>
-        </div>
-    </div>
-    <div class="form-group">
-        <label for="username">Username:</label>
-        <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
-        <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
-            <div *ngIf="f.username.errors.required">Username is required</div>
-        </div>
-    </div>
-    <div class="form-group">
-        <label for="password">Password:</label>
-        <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
-        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-            <div *ngIf="f.password.errors.required">Password is required</div>
-            <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
-        </div>
-    </div>
-
- 
-
- -->
-
-
-
-
-
-
-
-
 
 
 
@@ -149,5 +86,5 @@
 
  
     
-  </form>
+    
    

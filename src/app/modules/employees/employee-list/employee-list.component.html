@@ -6,6 +6,8 @@
   <th>Contact</th>
   <th>Address</th>
   <th>Email Address</th>
+  <th>Latitude </th>
+  <th> Longitude </th>
   <tr *ngFor="let emp of allEmployee">
 
     <td>{{emp.id}}</td>
@@ -15,6 +17,8 @@
     <td>{{emp.contact}}</td>
     <td>{{emp.address}}</td>
     <td>{{emp.emailaddress}}</td>
+    <td> {{emp.latitude}} </td>
+    <td> {{emp.longitude}} </td>
     <td>
       <a class="btn" (click)="edit(emp)">
         <i class="fa fa-edit"></i>

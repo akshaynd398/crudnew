@@ -16,7 +16,7 @@ import {FormsModule} from '@angular/forms';
 import { JwtInterceptor, ErrorInterceptor } from './_helpers';
 import { AlertService, AuthenticationService, UserService } from './_services';
 import { RegisterComponent } from './register';
-import { NgxUiLoaderModule } from  'ngx-ui-loader';
+//import { NgxUiLoaderModule } from  'ngx-ui-loader';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // import{NgProgressModule} from 'ngx-progressbar';
@@ -30,7 +30,10 @@ import { EmployeeComponent } from './modules/employees/employee/employee.compone
 import { EmployeeListComponent } from './modules/employees/employee-list/employee-list.component';
 import {ProgressBarModule} from "angular-progress-bar";
 import { Observable } from 'rxjs';
-import {APP_BASE_HREF} from '@angular/common'; 
+import {APP_BASE_HREF} from '@angular/common';
+import { MapComponent } from './map/map.component'; 
+import {AgmCoreModule} from '@agm/core';
+
 const routes:Routes=
 [
   { path: '', component: HomeComponent, canActivate: [AuthGuard] },
@@ -54,7 +57,8 @@ const routes:Routes=
     AlertComponent,
     RegisterComponent,
     AboutComponent,
-    ContactComponent
+    ContactComponent,
+    MapComponent
   ],
   imports: [
     ReactiveFormsModule,
@@ -73,10 +77,12 @@ const routes:Routes=
       positionClass:'toast-bottom-center',
       preventDuplicates:false
     }),
-    NgxUiLoaderModule,
-    ProgressBarModule
+   // NgxUiLoaderModule,
+    ProgressBarModule,
     
-   
+    AgmCoreModule.forRoot({
+      apiKey:'AIzaSyAWacAXOGhSa03WHtYTA1HiderEnHnmjXQ'
+    })
     
     
   ],

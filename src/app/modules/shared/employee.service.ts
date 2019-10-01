@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import{HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Employee } from 'src/app/model/employee.model';
-
+import {AgmMap} from '@agm/core';
 const headerOption = 
 {
   headers: new HttpHeaders({
@@ -23,8 +23,12 @@ export class EmployeeService {
     contact:null,
     address:"" ,
     emailaddress:"",
+    latitude:"",
+    longitude:"",
     
+   
   }
+  
   constructor(
     private http: HttpClient
   ) { }
